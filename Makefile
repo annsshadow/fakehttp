@@ -15,4 +15,3 @@ $(PROG): $(OBJS)
 
 clean:
 	        rm -rf *.o $(PROG)
-
