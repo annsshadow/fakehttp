@@ -1,15 +1,12 @@
 CC=gcc
 CFLAGS=-O2 -W -Werror -Wall
 PROG=fakehttp
-OBJS=fakehttp.o
+OBJS=fakehttp.c fakecommon.c fakedata.c
 
 all: $(PROG)
 
-%.o: %.c
-	        $(CC) -c $(CFLAGS) $< -o $@
-
-$(PROG): $(OBJS)
-	        $(CC) $(OBJS) -o $(PROG) -lpthread
+$(PROG):$(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(PROG) -lpthread
 
 .PHONY:clean
 
