@@ -85,12 +85,40 @@ struct thread_data_t {
     int mypipe_fd;
 };
 
+/**
+ * [sig_exit_handle description]
+ * @param number [description]
+ */
 void sig_exit_handle(int number);
 static void usage();
 static void set_noblocking(int fd);
+
+/**
+ * [destroy_fd description]
+ * @param myep_fd   [description]
+ * @param client_fd [description]
+ * @param data_ptr  [description]
+ */
 static void destroy_fd(int myep_fd, int client_fd, struct io_data_t *data_ptr);
+
+/**
+ * [io_event_loop description]
+ * @param  param [description]
+ * @return       [description]
+ */
 static void *io_event_loop(void *param);
-//static void fakehttp_log(const char *fmt, ...);
+
+/**
+ * [destroy_io_data description]
+ * @param io_data_ptr [description]
+ */
 static void destroy_io_data(struct io_data_t *io_data_ptr);
 static struct slice_t sth_to_send();
+
+/**
+ * [init_io description]
+ * @param  client_fd   [description]
+ * @param  client_addr [description]
+ * @return             [description]
+ */
 static struct io_data_t * init_io(int client_fd, struct sockaddr_in *client_addr);
