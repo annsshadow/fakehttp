@@ -127,7 +127,20 @@ struct slice_t sth_to_send();
  */
 struct io_data_t * init_io(int client_fd, struct sockaddr_in *client_addr);
 
+/**
+ * [io_output description]
+ * @param myep_fd       [description]
+ * @param client_io_ptr [description]
+ */
 void io_output(int myep_fd, struct io_data_t *client_io_ptr);
 
 //get data from client
+/**
+ * [io_input description]
+ * @param myep_fd        [description]
+ * @param client_io_ptr  [description]
+ * @param data_from_file [description]
+ * @param rsps_msg_fmt   [description]
+ * @param delay          [description]
+ */
 void io_input(int myep_fd, struct io_data_t *client_io_ptr, struct slice_t data_from_file, const char *rsps_msg_fmt, int delay);
