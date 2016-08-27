@@ -16,7 +16,7 @@
 ### vm-one
 * first:`make`
 * second:`$./fakehttp`
-* `Usage:  fakestub -l <local address> -p <port> -d <delay (ms)>`
+* `Usage:  fakehttp -l <local address> -p <port> -d <delay (ms)>`
 
 ### vm-two
 * `ab -n 80000 -c 200 -k http://IP-address:12321/`
